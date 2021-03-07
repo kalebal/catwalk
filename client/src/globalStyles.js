@@ -55,7 +55,8 @@ const TilePreset = styled.div`
 
 //different font maybe?
 const ModuleHeaderPreset = styled.h3`
-  font-size: 2rem;
+  font-size: 1rem;
+  margin: 0;
   margin-left: 3%;
   padding: 0.5rem 0;
   text-decoration: underline 2px ${({ theme }) => theme.lowPriorityText};
@@ -85,7 +86,8 @@ const ButtonPreset = styled.button`
   background-color: ${({ theme }) => theme.topLayer};
   color: ${({ theme }) => theme.lowPriorityText};
   border: none;
-  height: 4rem;
+  height: 3rem;
+  margin: 0.25rem;
   padding: 0 1.5rem;
   cursor: pointer;
   &:hover {
