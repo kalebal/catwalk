@@ -7,7 +7,7 @@ const FactorBar = (props) => {
   return (
     <Factor>
       <Name>{props.name}</Name>
-      <Indicator location={props.average}>&#9662;</Indicator>
+      <Indicator value={(parseInt(props.value) * 20) - 5}>&#9662;</Indicator>
       <FullBar><Bar></Bar><Bar></Bar><Bar></Bar></FullBar>
       <Values>
         <Value1>{props.range[0]}</Value1>
@@ -25,6 +25,7 @@ const Factor = styled.div`
 const Name = styled.span`
   display: block;
   font-style: italic;
+  text-decoration: underline;
   margin-bottom: 1rem;
 `;
 
@@ -33,8 +34,13 @@ const Indicator = styled.div`
   z-index: 2;
   font-size: 1.25em;
   color: ${Palette.primary};
+<<<<<<< HEAD
   margin-top: -1rem;
   margin-left: 50%;
+=======
+  margin-top: -2rem;
+  margin-left: ${props => props.value}%;
+>>>>>>> 9eb4341039f60d321074e6ab7634316497f9262c
 `;
 
 const FullBar = styled.div`
@@ -88,7 +94,7 @@ const Value3 = styled(Value)`
 FactorBar.propTypes = {
   name: PropTypes.string,
   range: PropTypes.array,
-  average: PropTypes.number
+  value: PropTypes.string
 };
 
 export default FactorBar;
