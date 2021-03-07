@@ -93,8 +93,8 @@ class Slide extends Component {
     }
     let thumb = this.state.defaultStyle.photos[0].thumbnail_url;
     return (
-      <StyledSlide thumburl={thumb}>
-        <Link to={{ pathname: `/products/${this.props.data.id}` }} key={this.props.data.id}>
+      <Link to={{ pathname: `/products/${this.props.data.id}` }} key={this.props.data.id}>
+        <StyledSlide thumburl={thumb}>
           {this.props.render(this.handleButtonClick)}
           <StyledSlideInfo
             data={this.props.data}
@@ -102,8 +102,8 @@ class Slide extends Component {
             defaultStyle={this.state.defaultStyle}
           ></StyledSlideInfo>
 
-        </Link>
-      </StyledSlide>
+        </StyledSlide>
+      </Link>
     );
   }
 }
@@ -129,7 +129,7 @@ const StyledSlide = styled.div`
   margin: 0.5em;
 
   &:hover {
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
    }
 `;

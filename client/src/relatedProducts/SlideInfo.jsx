@@ -37,10 +37,8 @@ const SalePrice = styled.p`
 `;
 
 const StyledSlideInfo = styled(SlideInfo)`
-  width: 200px;
-  height: 100px;
+  padding: 1em;
   background: linear-gradient(0deg, #181818 30%, #99999988 100%);
-
   p {
     color: white;
     margin: 0;
