@@ -95,7 +95,7 @@ const StyledCarouselWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 4em;
+  margin-top: 1em;
   position: relative;
 
 `;
