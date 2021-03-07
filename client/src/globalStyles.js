@@ -25,7 +25,7 @@ const PalettePreset = {
 
 //Note: this is a google font, linked in dist/index.html
 const FontsPreset = {
-  primary: 'Merriweather, serif',
+  primary: 'Roboto, sans-serif',
   original: 'Garamond, Helvetica, Arial'
 };
 
@@ -34,15 +34,12 @@ const GlobalPreset = createGlobalStyle`
   * {
     border-radius: 4px;
   }
-  html {
-    font-size: 62.5%;
-  }
+
   body {
     margin: 0 10%;
     color: ${({ theme }) => theme.primaryText};
     background-color: ${({ theme }) => theme.background};
     font-family: ${FontsPreset.primary};
-    font-size: 120%;
     border-radius: 10px;
   }
 
@@ -78,7 +75,7 @@ const ClickableTextPreset = styled.span`
 //ALT more salient red clickable color: hsl(0, 100%, 50%);
 
 const LowPriorityTextPreset = styled.span`
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-style: italic;
   color: ${({ theme }) => theme.lowPriorityText};
 `;
@@ -94,6 +91,9 @@ const ButtonPreset = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.midLight};
     color: ${({ theme }) => theme.secondaryText};
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
   }
 `;
 
@@ -116,9 +116,9 @@ const GalleryPreset = styled.div`
   margin-bottom: 10px;
 `;
 
+//border: 1px solid ${({ theme }) => theme.borders};
 const ThumbnailPreset = styled.img`
   display: inline-block;
-  border: 1px solid ${({ theme }) => theme.borders};
   border-radius: 5px;
   padding: 0.5rem;
   margin-right: 0.5rem;
