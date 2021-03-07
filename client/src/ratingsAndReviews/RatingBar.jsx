@@ -39,6 +39,7 @@ const StarRow = styled.div`
 `;
 
 const RowName = styled(ClickableText)`
+  font-size: 1rem;
 `;
 
 const Bar = styled.div`
