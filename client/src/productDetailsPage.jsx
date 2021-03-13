@@ -59,7 +59,9 @@ class ProductDetailsPage extends React.Component {
     const id = this.props.product_id;
     return (
       <div>
-        <ThemeSlider handleClick={this.props.toggleTheme} />
+        <ThemeSlider
+          handleClick={this.props.toggleTheme}
+          currentTheme={this.props.currentTheme} />
         <Navbar />
         <OverviewWithClickLogger
           key={'overview-module-' + id}
@@ -94,6 +96,7 @@ const featureTuplePropType = PropTypes.arrayOf(
 ProductDetailsPage.propTypes = {
   product_id: PropTypes.number,
   toggleTheme: PropTypes.func,
+  currentTheme: PropTypes.string,
   product: PropTypes.shape({
     id: PropTypes.number,
     campus: PropTypes.string,
