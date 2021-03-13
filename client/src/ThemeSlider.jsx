@@ -1,36 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-class ThemeSlider extends React.Component {
-  constructor(props) {
-    super(props);
+let ThemeSlider = (props) => {
+  const [isToggled, setToggle] = useState(props.currentTheme === 'dark');
 
-    this.state = {
-      isClicked: false
-    };
+  let toggle = () => {
+    props.handleClick();
+    setToggle(!isToggled);
+  };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  useEffect(() => {
+    if (props.currentTheme === 'dark' && !isToggled) {
+      setToggle(true);
+    }
+  });
 
-  handleClick() {
-    this.props.handleClick();
-    this.setState({ isClicked: !this.state.isClicked });
-  }
-
-  render() {
-    return (
-      <SlideWrapper>
-        <Icons>🌞</Icons>
-        <Switch htmlFor="toggleTheme">
-          <Slide title="Switch between light and dark theme" id="toggleTheme" type="checkbox" onClick={this.handleClick}></Slide>
-          <Slider slideClicked={this.state.isClicked}></Slider>
-        </Switch>
-        <Icons>🌙</Icons>
-      </SlideWrapper>
-    );
-  }
-}
+  return (
+    <SlideWrapper>
+      <Icons>🌞</Icons>
+      <Switch htmlFor="toggleTheme">
+        <Slide title="Switch between light and dark theme" id="toggleTheme" type="checkbox"
+          checked={isToggled}
+          onChange={toggle}></Slide>
+        <Slider slideClicked={isToggled}></Slider>
+      </Switch>
+      <Icons>🌙</Icons>
+    </SlideWrapper>
+  );
+};
 
 const SlideWrapper = styled.span`
   margin-top: 2px;
@@ -97,6 +95,7 @@ const Slide = styled.input`
 
 ThemeSlider.propTypes = {
   handleClick: PropTypes.func,
+  currentTheme: PropTypes.string
 };
 
 export default ThemeSlider;
