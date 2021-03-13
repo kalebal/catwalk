@@ -43,6 +43,7 @@ let App = () => {
             const id = props.match.params.id;
             return (
               <ProductDetailsPage
+                currentTheme ={theme}
                 toggleTheme={toggleTheme}
                 key={'product-details-' + id}
                 product_id={parseInt(id)} />
