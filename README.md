@@ -1,6 +1,6 @@
 # Project Catwalk
 
-The Hack Reactor front end capstone project to create a client-facing retail web portal using React.
+A client-facing retail web portal for clothing and acessories.
 
 
 ## Installation
